@@ -12,6 +12,7 @@ The public record is derived from a richer private evidence set. The private set
 - exact command log;
 - post-cleanup results report;
 - read-only repository, archive, media, and storage analyses.
+- any future iPhone, Google Drive, or GitHub/local-clone private inventory, approval record, execution log, or recovery test.
 
 These artifacts are intentionally not copied into public Git.
 

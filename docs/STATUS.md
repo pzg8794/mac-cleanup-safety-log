@@ -2,6 +2,18 @@
 
 Last updated: 2026-08-02
 
+## System status
+
+| System or control | State | Public-safe detail |
+|---|---|---|
+| [Mac](../scopes/mac/README.md) | Audit v1 complete; corrected audit v2 complete; Tier 1 complete; Tier 2 pending | No Tier 2 move or deletion is authorized |
+| [iPhone](../scopes/iphone/README.md) | Not started | No audit, export, backup inspection, or cleanup has begun |
+| [Google Drive](../scopes/google-drive/README.md) | Not started | No listing, inventory, move, or cleanup has begun |
+| [GitHub and local clones](../scopes/github/README.md) | Not started | No cross-system audit has begun; earlier Mac-scoped evidence checks do not constitute this scope |
+| Cross-system data-placement policy | Drafted in this change | Governance only; no operational approval is implied |
+
+## Mac phase status
+
 | Phase | State | Public-safe outcome |
 |---|---|---|
 | Initial audit | Complete | Read-only inventory established; no cleanup performed |
@@ -23,13 +35,13 @@ Last updated: 2026-08-02
 - APFS free-space increase observed: 845,258,752
 - Higher-tier actions executed: 0
 
-## Current gate
+## Current gates
 
-The project is stopped at the Tier 2 approval boundary. Private evidence supports a proposal, but neither quarantine nor deletion has been approved in this repository.
+- Mac is stopped at the Tier 2 approval boundary.
+- iPhone, Google Drive, and GitHub/local-clone scopes are stopped before audit authorization.
+- The cross-system policies are drafts and do not authorize access, scanning, movement, or cleanup.
+- Private evidence remains the source of truth for any future candidate decision.
 
 ## Next safe work
 
-- Observe which Tier 1 caches rebuild during normal tool use.
-- Re-measure storage only when a new decision is needed.
-- Keep higher-tier candidates preserved until explicit, item-level approval.
-- Continue publishing only aggregated, non-identifying metrics.
+Follow the ordered [digital cleanup roadmap](ROADMAP.md). Each system must independently complete audit, approval, execution, and verification, with a stop before the next system or risk tier.
