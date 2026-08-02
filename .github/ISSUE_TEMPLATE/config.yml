@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Safety model
+    url: https://github.com/pzg8794/mac-cleanup-safety-log/blob/main/docs/SAFETY_MODEL.md
+    about: Review the preservation and approval boundaries before proposing a candidate.

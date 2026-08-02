@@ -1,0 +1,40 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Private working areas
+.private/
+private/
+raw/
+local/
+quarantine/
+
+# Raw audit and execution artifacts
+*_Audit*.md
+*_Inventory*.csv
+*_Duplicates*.csv
+*_Command_Log*.txt
+*_Manifest*.csv
+
+# Archives, media, managed libraries, and databases
+*.zip
+*.tar
+*.tar.gz
+*.dmg
+*.pkg
+*.mov
+*.mp4
+*.m4a
+*.zoom
+*.photoslibrary/
+*.musiclibrary/
+*.db
+*.sqlite
+*.sqlite3
+
+# Credentials and key material
+*.pem
+*.key
+*.p12
+*.pfx

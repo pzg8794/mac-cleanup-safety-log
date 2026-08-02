@@ -1,0 +1,58 @@
+name: Cleanup candidate review
+description: Propose a public-safe candidate for evidence review; do not include machine paths or private filenames.
+title: "candidate: "
+labels:
+  - review-needed
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep machine-specific evidence in the private audit. This issue records only the public-safe decision layer.
+  - type: input
+    id: candidate
+    attributes:
+      label: Candidate ID
+      placeholder: T2-03
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Risk tier
+      options:
+        - Tier 1 — regenerable
+        - Tier 2 — verified redundancy
+        - Tier 3 — history-backed
+        - Tier 4 — manual domain review
+        - Tier 5 — protected
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public-safe evidence summary
+      description: Explain regeneration or retained-copy proof without paths, names, or hashes.
+    validations:
+      required: true
+  - type: input
+    id: recovery
+    attributes:
+      label: Allocated-byte recovery estimate
+      placeholder: 0 until a later deletion
+    validations:
+      required: true
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Quarantine and rollback plan
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: I removed absolute paths, private filenames, personal content, and content hashes.
+          required: true
+        - label: I am requesting review, not authorizing execution.
+          required: true

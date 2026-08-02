@@ -1,0 +1,18 @@
+date,phase,metric,value,unit,notes
+2026-08-02,corrected-audit,physical_duplicate_groups,2175,groups,Independent physical-copy groups after exclusions
+2026-08-02,corrected-audit,duplicate_allocated_upper_bound,5526360064,bytes,Not a deletion recommendation or guaranteed APFS recovery
+2026-08-02,corrected-audit,false_positive_paths_removed,6541,paths,Dependency environment and worktree paths removed from the original duplicate claim
+2026-08-02,corrected-audit,hard_link_sets,123,sets,Same-device same-inode aliases
+2026-08-02,corrected-audit,hard_link_recoverable_content,0,bytes,Removing one alias does not release content while another link remains
+2026-08-02,tier-1,candidates_reviewed,19,entries,Every entry was revalidated before action
+2026-08-02,tier-1,actions_completed,5,entries,Only exact regenerable cache roots passed
+2026-08-02,tier-1,actions_skipped,14,entries,Active ambiguous changed or structurally excluded
+2026-08-02,tier-1,files_removed,11792,files,Ordinary files from five approved cache roots
+2026-08-02,tier-1,logical_bytes_removed,816243168,bytes,Target-level file lengths
+2026-08-02,tier-1,target_allocated_bytes_released,856268800,bytes,Target-level allocated blocks before minus after
+2026-08-02,tier-1,observed_apfs_free_space_increase,845258752,bytes,Whole-container measurement
+2026-08-02,tier-1,cleanup_errors,0,errors,No error after an authorized deletion began
+2026-08-02,tier-1,higher_tier_actions,0,actions,No Tier 2 through Tier 5 action
+2026-08-02,tier-2-proposal,candidates_verified,2,entries,Proposal only with private content proof
+2026-08-02,tier-2-proposal,actions_executed,0,actions,No quarantine or deletion
+2026-08-02,tier-2-proposal,eventual_allocated_upper_bound,913276928,bytes,Would require separate quarantine and later deletion approvals

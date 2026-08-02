@@ -1,0 +1,17 @@
+name: Public-safety validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Validate public-safe content
+        run: ./scripts/validate_public_repo.sh
