@@ -7,6 +7,7 @@ This repository is deliberately less detailed than the private audit. Public doc
 - absolute home-directory paths or local account names;
 - email addresses, cloud account identifiers, or mounted-sync paths;
 - raw inventory or duplicate CSV files;
+- iPhone exports or backups, device screenshots, cloud file listings, repository inventories, private manifests, local cleanup plans, and raw storage reports;
 - exact command logs containing private targets;
 - personal filenames, recording/session names, transcripts, messages, or media;
 - financial, health, relationship, application, or identity records;

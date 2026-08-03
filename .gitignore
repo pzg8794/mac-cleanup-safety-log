@@ -2,6 +2,8 @@
 .env
 .env.*
 !.env.example
+__pycache__/
+*.py[cod]
 
 # Private working areas
 .private/
@@ -9,6 +11,16 @@ private/
 raw/
 local/
 quarantine/
+device-exports/
+device-backups/
+cloud-exports/
+cloud-listings/
+repo-inventories/
+local-plans/
+screenshots/
+storage-reports/
+**/MobileSync/Backup/
+**/mobilesync/backup/
 
 # Raw audit and execution artifacts
 *_Audit*.md
@@ -16,6 +28,30 @@ quarantine/
 *_Duplicates*.csv
 *_Command_Log*.txt
 *_Manifest*.csv
+*[Ii][Pp][Hh][Oo][Nn][Ee]*[Ee][Xx][Pp][Oo][Rr][Tt]*
+*[Ii][Pp][Hh][Oo][Nn][Ee]*[Bb][Aa][Cc][Kk][Uu][Pp]*
+[Ii][Oo][Ss]*[Ee][Xx][Pp][Oo][Rr][Tt]*
+[Ii][Oo][Ss]*[Bb][Aa][Cc][Kk][Uu][Pp]*
+*[Ee][Xx][Pp][Oo][Rr][Tt]*[Ii][Pp][Hh][Oo][Nn][Ee]*
+*[Bb][Aa][Cc][Kk][Uu][Pp]*[Ii][Pp][Hh][Oo][Nn][Ee]*
+*[Ee][Xx][Pp][Oo][Rr][Tt]*[Ii][Oo][Ss]*
+*[Bb][Aa][Cc][Kk][Uu][Pp]*[Ii][Oo][Ss]*
+*[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr][Yy]*
+*[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr][Ii][Ee][Ss]*
+*[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]*
+*[Ll][Ii][Ss][Tt][Ii][Nn][Gg]*
+*[Ff][Ii][Ll][Ee]*[Ll][Ii][Ss][Tt]*
+*[Rr][Ee][Pp][Oo]*[Ll][Ii][Ss][Tt]*
+*[Gg][Ii][Tt][Hh][Uu][Bb]*[Rr][Ee][Pp][Oo]*
+*[Rr][Ee][Pp][Oo][Ss][Ii][Tt][Oo][Rr][Yy]*.[Cc][Ss][Vv]
+*[Rr][Ee][Pp][Oo][Ss][Ii][Tt][Oo][Rr][Yy]*.[Jj][Ss][Oo][Nn]
+*[Rr][Ee][Pp][Oo][Ss][Ii][Tt][Oo][Rr][Ii][Ee][Ss]*.[Cc][Ss][Vv]
+*[Rr][Ee][Pp][Oo][Ss][Ii][Tt][Oo][Rr][Ii][Ee][Ss]*.[Jj][Ss][Oo][Nn]
+*[Mm][Aa][Nn][Ii][Ff][Ee][Ss][Tt]*
+*[Cc][Ll][Ee][Aa][Nn][Uu][Pp]*[Pp][Ll][Aa][Nn]*
+*[Pp][Ll][Aa][Nn]*[Cc][Ll][Ee][Aa][Nn][Uu][Pp]*
+*[Ss][Tt][Oo][Rr][Aa][Gg][Ee]*[Rr][Ee][Pp][Oo][Rr][Tt]*
+*[Rr][Ee][Pp][Oo][Rr][Tt]*[Ss][Tt][Oo][Rr][Aa][Gg][Ee]*
 
 # Archives, media, managed libraries, and databases
 *.zip
@@ -27,11 +63,25 @@ quarantine/
 *.mp4
 *.m4a
 *.zoom
+*.[pP][nN][gG]
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[hH][eE][iI][cC]
+*.[gG][iI][fF]
+*.[wW][eE][bB][pP]
+*.[tT][iI][fF]
+*.[tT][iI][fF][fF]
 *.photoslibrary/
 *.musiclibrary/
 *.db
 *.sqlite
 *.sqlite3
+*.plist
+*.log
+*.ipsw
+*.ipa
+*.mobileconfig
+*.mobileprovision
 
 # Credentials and key material
 *.pem

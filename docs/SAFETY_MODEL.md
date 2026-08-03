@@ -1,15 +1,18 @@
 # Safety Model
 
-The project treats cleanup as a data-preservation workflow. Risk classification happens before any filesystem action.
+The project treats cleanup as a data-preservation workflow. Risk classification happens before any filesystem, device, cloud, or repository action.
 
 ## Non-negotiable boundaries
 
 - Begin with read-only inspection.
+- Give each system its own audit, approval, execution, and verification cycle.
+- Never transfer evidence or approval from one system to another.
 - Never infer disposability from age, size, or filename.
 - Never follow symbolic links during cleanup analysis.
 - Distinguish hard-linked names from independent physical copies.
 - Preserve repositories, worktrees, history, remotes, and uncommitted state.
 - Exclude environments, dependencies, databases, browser profiles, credentials, managed libraries, cloud-managed storage, and system-managed storage.
+- Treat synchronization as possible deletion propagation, not as an independent backup.
 - Keep personal, course, research, financial, and business records unless a domain-specific review proves otherwise.
 - Do not use elevated privileges.
 - Do not empty Trash as part of an audit.
@@ -35,6 +38,7 @@ An entry does not advance when any of these are true:
 - the target contains a repository, worktree, environment, dependency tree, database, session, preference, credential, model, or extension;
 - the item changed materially since approval;
 - the retained copy is incomplete or cannot be verified by content;
+- ownership, accessibility, synchronization, or recovery is uncertain;
 - the expected recovery is only logical, not physical;
 - rollback is unclear;
 - the scope is ambiguous.

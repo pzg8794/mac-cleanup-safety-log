@@ -21,6 +21,10 @@ REQUIRED = {
     "SECURITY.md",
     "docs/SAFETY_MODEL.md",
     "docs/WORKFLOW.md",
+    "docs/ROADMAP.md",
+    "docs/DATA_PLACEMENT_POLICY.md",
+    "docs/BACKUP_AND_RECOVERY_POLICY.md",
+    "docs/RETENTION_POLICY.md",
     "docs/AUDIT_METHOD.md",
     "docs/STATUS.md",
     "docs/DECISION_LOG.md",
@@ -32,6 +36,10 @@ REQUIRED = {
     "data/public-metrics.csv",
     "templates/candidate-review.md",
     "templates/run-report.md",
+    "scopes/mac/README.md",
+    "scopes/iphone/README.md",
+    "scopes/google-drive/README.md",
+    "scopes/github/README.md",
 }
 
 FORBIDDEN_FILE_PARTS = {
@@ -41,6 +49,50 @@ FORBIDDEN_FILE_PARTS = {
     "_Manifest",
     ".photoslibrary",
     ".musiclibrary",
+}
+
+FORBIDDEN_ARTIFACT_PATTERNS = {
+    "iPhone or iOS export/backup": re.compile(
+        r"(?:(?:iphone|ios).*?(?:exports?|backups?)|"
+        r"(?:exports?|backups?).*?(?:iphone|ios))",
+        re.I,
+    ),
+    "inventory": re.compile(r"inventor(?:y|ies)", re.I),
+    "device screenshot": re.compile(r"screen[._ -]*shots?", re.I),
+    "cloud or file listing": re.compile(
+        r"(?:(?:cloud|drive|files?).*?(?:listings?|lists?)|"
+        r"(?:listings?|lists?).*?(?:cloud|drive|files?))",
+        re.I,
+    ),
+    "repository listing": re.compile(
+        r"(?:^|[/\\])(?:github[._ -]*repos?|repositor(?:y|ies))"
+        r"(?:[._ -].*)?\.(?:csv|json|tsv|txt)$",
+        re.I,
+    ),
+    "private manifest": re.compile(r"(?:private[._ -]*)?manifests?", re.I),
+    "local cleanup plan": re.compile(
+        r"(?:cleanup.*?plans?|plans?.*?cleanup)", re.I
+    ),
+    "raw storage report": re.compile(
+        r"(?:(?:raw.*?)?storage.*?reports?|reports?.*?storage)", re.I
+    ),
+    "device backup tree": re.compile(r"mobilesync[/\\]backup", re.I),
+}
+
+PRIVATE_PATTERN_EXAMPLES = {
+    "backup-iphone.json",
+    "export-ios.json",
+    "drive-file-list.csv",
+    "github-repos.json",
+    "repositories.csv",
+    "cleanup-plan.json",
+    "report-storage.txt",
+}
+
+PUBLIC_PATTERN_EXAMPLES = {
+    "docs/ROADMAP.md",
+    "docs/DATA_PLACEMENT_POLICY.md",
+    "scopes/github/README.md",
 }
 
 FORBIDDEN_SUFFIXES = {
@@ -58,6 +110,21 @@ FORBIDDEN_SUFFIXES = {
     ".mp4",
     ".m4a",
     ".zoom",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".heic",
+    ".gif",
+    ".webp",
+    ".tif",
+    ".tiff",
+    ".plist",
+    ".log",
+    ".tsv",
+    ".ipsw",
+    ".ipa",
+    ".mobileconfig",
+    ".mobileprovision",
 }
 
 CONTENT_RULES = {
@@ -71,6 +138,7 @@ CONTENT_RULES = {
     "AWS access key": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
     "private-key header": re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
     "private-file SHA-256": re.compile(r"\b[0-9a-fA-F]{64}\b"),
+    "private commit or legacy device identifier": re.compile(r"\b[0-9a-fA-F]{40}\b"),
 }
 
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
@@ -91,15 +159,54 @@ def check_required(files: set[str], errors: list[str]) -> None:
         errors.append(f"missing required file: {missing}")
 
 
+def matching_artifact_labels(name: str) -> list[str]:
+    return [
+        label
+        for label, pattern in FORBIDDEN_ARTIFACT_PATTERNS.items()
+        if pattern.search(name)
+    ]
+
+
+def check_pattern_regressions(errors: list[str]) -> None:
+    for name in sorted(PRIVATE_PATTERN_EXAMPLES):
+        if not matching_artifact_labels(name):
+            errors.append(f"private-artifact pattern regression: {name}")
+    for name in sorted(PUBLIC_PATTERN_EXAMPLES):
+        labels = matching_artifact_labels(name)
+        if labels:
+            errors.append(
+                f"public path rejected by artifact pattern: {name} ({', '.join(labels)})"
+            )
+
+
 def check_filenames(files: list[str], errors: list[str]) -> None:
     for name in files:
         path = Path(name)
         if (ROOT / name).is_symlink():
             errors.append(f"symbolic link is tracked: {name}")
-        if any(part in {"private", "raw", "local", "quarantine"} for part in path.parts):
+        if any(
+            part.casefold()
+            in {
+                "private",
+                "raw",
+                "local",
+                "quarantine",
+                "device-exports",
+                "device-backups",
+                "cloud-exports",
+                "cloud-listings",
+                "repo-inventories",
+                "local-plans",
+                "screenshots",
+                "storage-reports",
+            }
+            for part in path.parts
+        ):
             errors.append(f"private working directory is tracked: {name}")
-        if any(part in name for part in FORBIDDEN_FILE_PARTS):
+        if any(part.casefold() in name.casefold() for part in FORBIDDEN_FILE_PARTS):
             errors.append(f"raw/private artifact filename is tracked: {name}")
+        for label in matching_artifact_labels(name):
+            errors.append(f"{label} filename is tracked: {name}")
         if path.suffix.lower() in FORBIDDEN_SUFFIXES:
             errors.append(f"forbidden binary or private-data suffix is tracked: {name}")
         if path.name == ".env" or path.name.startswith(".env."):
@@ -198,6 +305,7 @@ def main() -> int:
     files = tracked_files()
     file_set = set(files)
     check_required(file_set, errors)
+    check_pattern_regressions(errors)
     check_filenames(files, errors)
     check_git_modes(errors)
     check_contents(files, errors)

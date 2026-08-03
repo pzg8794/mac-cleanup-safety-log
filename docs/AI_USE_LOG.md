@@ -13,3 +13,15 @@
 | Human responsibility | The user defines scope, approves risk tiers, and retains final authority over quarantine or deletion |
 
 AI suggestions are not treated as evidence by themselves. Filesystem metadata, content comparisons, repository state, archive integrity, and user approval provide the evidence used for decisions.
+
+## 2026-08-02 — Cross-system governance expansion
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Purpose | Expand the public-safe decision layer from Mac cleanup to future iPhone, Google Drive, and GitHub/local-clone scopes |
+| Inputs | The existing public repository and a user-authored documentation specification |
+| Outputs | Roadmap, draft placement/recovery/retention policies, scope control pages, status updates, and strengthened publication checks |
+| Excluded activity | No Mac, iPhone, Google Drive, or other-repository scan; no cleanup, move, deletion, upload, or private evidence publication |
+| Verification | Repository validator, link checks, diff checks, and staged-content privacy review completed; pull-request CI remains pending at authoring time |
+| Human responsibility | The user retains authority over every future audit scope, risk tier, and filesystem or cloud action |

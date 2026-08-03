@@ -1,6 +1,6 @@
 # Workflow
 
-The workflow separates evidence collection, approval, execution, and verification.
+The workflow separates evidence collection, approval, execution, and verification. It applies independently to Mac, iPhone, Google Drive, and GitHub/local-clone scopes. Completion or approval in one system never advances another.
 
 ```mermaid
 flowchart LR
@@ -16,7 +16,7 @@ flowchart LR
 
 ## 1. Audit only
 
-Record storage state, directory totals, large ordinary files, file-type totals, old-file indicators, empty directories, broken links, and likely temporary material. Do not label a file unnecessary solely because it is old or large.
+Define one system's scope and exclusions, then record only the read-only evidence appropriate to it. Local storage work may include directory totals, file categories, old-file indicators, links, and likely temporary material; cloud, device, and repository audits require their own ownership, synchronization, completeness, history, and recovery evidence. Do not label an item unnecessary solely because it is old or large.
 
 ## 2. Correct the inventory
 
@@ -50,6 +50,8 @@ Measure both:
 - whole-volume free and used space.
 
 Record swap separately. APFS metadata, compression, clones, snapshots, and background writes can make the two measurements differ.
+
+For device, cloud, and repository work, also verify accessibility, ownership, synchronization effects, history or recovery state, and continued function through an independent route.
 
 ## 7. Stop
 

@@ -2,9 +2,9 @@
 
 [![Public-safety validation](https://github.com/pzg8794/mac-cleanup-safety-log/actions/workflows/public-safety.yml/badge.svg)](https://github.com/pzg8794/mac-cleanup-safety-log/actions/workflows/public-safety.yml)
 
-A public-safe record of a preservation-first Mac storage audit and staged cleanup process.
+A public-safe record of a preservation-first cleanup project that began with the Mac and is expanding to connected digital-storage systems: Mac, iPhone, Google Drive, and GitHub repositories with their local clones.
 
-This repository documents how cleanup decisions were made, what was verified, what was intentionally preserved, and what measurable result followed. It is **not** a one-click cleanup utility and does not contain raw machine inventories or machine-specific deletion commands.
+This repository is the project's public-safe **decision and accountability layer**. It documents how decisions are made, what is verified, what is intentionally preserved, and what measurable result follows. Private inventories, exact targets, evidence crosswalks, and execution artifacts remain local. This is **not** a one-click cleanup utility and contains no machine-specific deletion commands.
 
 ## Current outcome
 
@@ -17,6 +17,19 @@ The project completed three controlled phases on 2026-08-02:
 Tier 1 removed 11,792 cache files. Target-level accounting showed 856,268,800 allocated bytes released, while APFS free space increased by 845,258,752 bytes. Fourteen other provisional cache entries were skipped because their owners were active, their contents crossed a safety boundary, or their ownership was ambiguous.
 
 No repository, environment, database, cloud-managed folder, managed media library, personal recording, research state, backup, or higher-tier candidate was changed.
+
+This documentation expansion performs no new audit or cleanup.
+
+## Connected scopes
+
+| Scope | Current state | Public control page |
+|---|---|---|
+| Mac | Audit v1 complete; corrected audit v2 complete; Tier 1 complete; Tier 2 pending | [`scopes/mac/`](scopes/mac/README.md) |
+| iPhone | Not started | [`scopes/iphone/`](scopes/iphone/README.md) |
+| Google Drive | Not started | [`scopes/google-drive/`](scopes/google-drive/README.md) |
+| GitHub repositories and local clones | Not started | [`scopes/github/`](scopes/github/README.md) |
+
+Each scope requires its own audit, approval, execution, and verification phase. Evidence and approval do not transfer between systems.
 
 ## Guiding principle
 
@@ -38,6 +51,10 @@ Every action must pass a preservation test:
 |---|---|
 | [`docs/SAFETY_MODEL.md`](docs/SAFETY_MODEL.md) | Five cleanup tiers and hard safety boundaries |
 | [`docs/WORKFLOW.md`](docs/WORKFLOW.md) | End-to-end audit, approval, execution, and verification flow |
+| [`docs/ROADMAP.md`](docs/ROADMAP.md) | Ordered cross-system program plan and approval gates |
+| [`docs/DATA_PLACEMENT_POLICY.md`](docs/DATA_PLACEMENT_POLICY.md) | Draft canonical-location and minimal-local-storage rules |
+| [`docs/BACKUP_AND_RECOVERY_POLICY.md`](docs/BACKUP_AND_RECOVERY_POLICY.md) | Draft proof required before local deletion can be proposed |
+| [`docs/RETENTION_POLICY.md`](docs/RETENTION_POLICY.md) | Draft retention states and category-transition rules |
 | [`docs/AUDIT_METHOD.md`](docs/AUDIT_METHOD.md) | Storage, duplicate, hard-link, and archive methodology |
 | [`docs/STATUS.md`](docs/STATUS.md) | Current public-safe project status and next decision gate |
 | [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) | Durable record of preservation and cleanup decisions |
@@ -58,6 +75,7 @@ The private working audit remains local. This public repository does not include
 
 - absolute home-directory paths or account identifiers;
 - raw file inventories, duplicate manifests, or command logs;
+- iPhone exports or backups, Google Drive inventories, repository inventories, cloud listings, or local cleanup plans;
 - personal filenames, media, transcripts, messages, or email;
 - repository worktree paths, private project names, or untracked-file details;
 - device backups, cloud-storage listings, database contents, or application profiles;
@@ -72,11 +90,11 @@ Start with the [candidate-review template](templates/candidate-review.md). Keep 
 
 ## Project status
 
-- Audit v1: complete, read-only
-- Corrected audit v2: complete, read-only
-- Tier 1: complete and verified
-- Tier 2: proposal documented privately; no action approved or executed
-- Tiers 3–5: protected or awaiting domain-specific review
+- Mac: Tier 1 complete and verified; Tier 2 pending
+- iPhone: not started
+- Google Drive: not started
+- GitHub and local clones: not started
+- Cross-system data-placement, backup/recovery, and retention policies: drafted in this change
 
 This project stops at each approval boundary. A future tier requires a new evidence review and explicit authorization.
 
