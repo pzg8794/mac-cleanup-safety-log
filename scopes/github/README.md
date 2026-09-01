@@ -2,11 +2,17 @@
 
 ## Purpose
 
-Plan a future audit of GitHub repositories and local clones while preserving history, remotes, branches, worktrees, uncommitted state, and recoverability.
+Track limited repository preflights while preserving history, remotes,
+branches, worktrees, uncommitted state, and recoverability.
 
 ## Current status
 
-No cross-system GitHub/local-clone audit or cleanup has started under this scope. Earlier Mac-scoped evidence checks, if any, do not constitute this audit. This repository is the only repository modified by this documentation change.
+A limited, authorized course-root preflight was completed on 2026-09-01.
+Twenty-five course roots were checked for a local repository, origin, upstream,
+worktree status, and live remote head. All had repositories and remotes; 20
+heads matched, 11 worktrees had changes, and five roots required
+reconciliation. No course repository was pulled, merged, reset, committed,
+pushed, or reconfigured.
 
 ## Major risks
 
@@ -28,16 +34,16 @@ No cross-system GitHub/local-clone audit or cleanup has started under this scope
 
 ## Prohibited actions
 
-- No scan of other repositories or clones under this documentation change
+- No broader repository scan may be inferred from the limited course-root preflight
 - No deletion, replacement, destructive reinitialization, history rewrite, force push, clean/reset operation, or remote change
 - No individual-file deduplication inside repositories or worktrees
 - No publication of private remotes, local paths, branch details, untracked filenames, secrets, or private commit evidence
 
 ## Planned audit stages
 
-1. Define the repository and clone scope privately.
-2. Inventory repository identities without changing refs or worktrees.
-3. Reconcile local and remote state read-only.
+1. Preserve the completed private course-root inventory.
+2. Review each dirty or divergent root independently.
+3. Reconcile local and remote state without discarding work.
 4. Identify unique local work and incomplete backups.
 5. Classify generated, history-backed, protected, and externally stored material.
 6. Build repository-level organization and recovery proposals.
@@ -46,7 +52,10 @@ No cross-system GitHub/local-clone audit or cleanup has started under this scope
 
 ## Approval boundary
 
-No audit or cleanup is authorized. Each repository or clone requires its own evidence review, and no repository action may be inferred from the Mac cleanup approval.
+The limited preflight authorizes no synchronization or cleanup. Each dirty,
+divergent, malformed, nested, or shared-remote repository requires its own
+evidence review. No pull, merge, reset, push, remote change, link replacement,
+or repository cleanup may be inferred from the preflight.
 
 ## Related controls
 

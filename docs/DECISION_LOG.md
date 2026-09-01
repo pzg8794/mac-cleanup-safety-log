@@ -47,3 +47,21 @@
 **Decision:** Document the next proposal without moving or deleting its candidates.
 
 **Reason:** A completed lower tier does not authorize the next risk tier.
+
+## D-009 — Make directory context part of Rule 0
+
+**Decision:** Require reviewers to inspect the owning project's instructions,
+lifecycle, current status, and relevant task history before classifying
+pre-existing output.
+
+**Reason:** A global scan cannot distinguish active workflow state, recoverable
+generated output, evidence, or deliberately retained project history.
+
+## D-010 — Use stable cross-course references only when function and privacy permit
+
+**Decision:** Prefer commit-pinned GitHub references for reference-only,
+public-safe material, while preserving executable dependencies, private or
+submission-specific artifacts, and repository history.
+
+**Reason:** Blind file replacement can break a course, publish protected data,
+or report storage recovery that Git history still consumes.

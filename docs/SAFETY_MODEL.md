@@ -4,6 +4,8 @@ The project treats cleanup as a data-preservation workflow. Risk classification 
 
 ## Non-negotiable boundaries
 
+- Apply the recursive [Rule 0 directory-contract gate](RULE_0.md) before
+  classifying pre-existing project material.
 - Begin with read-only inspection.
 - Give each system its own audit, approval, execution, and verification cycle.
 - Never transfer evidence or approval from one system to another.

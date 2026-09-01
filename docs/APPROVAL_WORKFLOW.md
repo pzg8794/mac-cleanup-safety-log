@@ -9,6 +9,8 @@ Every cleanup candidate receives a stable public-safe ID. Machine paths and priv
 | Candidate ID | Stable, non-identifying identifier |
 | Category | Cache, redundant directory, archive, generated output, backup, media, or protected material |
 | Risk tier | One of the five documented tiers |
+| Directory contract | Owning project instructions, lifecycle, and relevant task record reviewed |
+| Run state | Producing workflow complete and owner inactive |
 | Evidence | Why the item is regenerable or redundant |
 | File count | Number of affected ordinary files |
 | Logical size | Sum of file lengths |
@@ -19,6 +21,8 @@ Every cleanup candidate receives a stable public-safe ID. Machine paths and priv
 | Active owner | Application or process state |
 | Quarantine plan | Dated, exact, reversible destination |
 | Rollback | Tested inverse action or regeneration path |
+| Verification strength | Cryptographic equality or stronger domain-specific proof |
+| Restore or resume test | Proportionate independent recovery evidence |
 | Unresolved concern | Anything preventing low-risk classification |
 | Approval | Explicit user decision and date |
 

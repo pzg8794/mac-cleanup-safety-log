@@ -16,3 +16,18 @@ date,phase,metric,value,unit,notes
 2026-08-02,tier-2-proposal,candidates_verified,2,entries,Proposal only with private content proof
 2026-08-02,tier-2-proposal,actions_executed,0,actions,No quarantine or deletion
 2026-08-02,tier-2-proposal,eventual_allocated_upper_bound,913276928,bytes,Would require separate quarantine and later deletion approvals
+2026-09-01,rule0-workspace,zip_files_initial,123,files,Project-aware archive inventory after exclusions
+2026-09-01,rule0-workspace,zip_allocated_bytes_initial,615915520,bytes,Target-level allocated blocks
+2026-09-01,rule0-workspace,exact_zip_duplicate_groups_initial,44,groups,Current SHA-256 and device-inode grouping
+2026-09-01,rule0-workspace,duplicate_zip_files_removed,40,files,Each retained one canonical same-project copy
+2026-09-01,rule0-workspace,duplicate_html_files_removed,40,files,Each retained one canonical same-project copy
+2026-09-01,rule0-workspace,logical_bytes_removed,46823868,bytes,Target-level file lengths
+2026-09-01,rule0-workspace,target_allocated_bytes_released,46993408,bytes,Target-level allocated blocks before minus after
+2026-09-01,rule0-workspace,zip_files_retained,83,files,All received project-level KEEP or STOP decisions
+2026-09-01,rule0-workspace,zip_allocated_bytes_retained,593498112,bytes,Protected source provenance submissions deliveries and unproven bundles
+2026-09-01,course-repo-preflight,course_roots_reviewed,25,repositories,Limited authorized course-root scope
+2026-09-01,course-repo-preflight,roots_with_origin_and_upstream,25,repositories,Local repository boundary present
+2026-09-01,course-repo-preflight,live_remote_head_matches,20,repositories,Compared with live remote branch head
+2026-09-01,course-repo-preflight,roots_requiring_reconciliation,5,repositories,Dirty and nonmatching or fetch-blocked
+2026-09-01,course-repo-preflight,roots_with_worktree_changes,11,repositories,Preserved without staging or reset
+2026-09-01,course-repo-preflight,synchronization_actions,0,actions,No pull merge reset commit push or remote change

@@ -4,7 +4,8 @@ The workflow separates evidence collection, approval, execution, and verificatio
 
 ```mermaid
 flowchart LR
-    A["Audit only"] --> B["Correct false positives"]
+    Z["Resolve owner and directory contract"] --> A["Audit only"]
+    A --> B["Correct false positives"]
     B --> C["Risk and approval table"]
     C --> D["Revalidate exact candidates"]
     D --> E{"Explicit tier approval?"}
@@ -13,6 +14,14 @@ flowchart LR
     G --> H["Measure and verify"]
     H --> I["Stop at next tier boundary"]
 ```
+
+## 0. Resolve ownership and the directory contract
+
+Apply [Rule 0](RULE_0.md) before inventory. Resolve the exact project and
+repository boundary, read its current storage and run lifecycle, inspect the
+relevant task history when available, and identify the owning workflow. Global
+age, size, extension, and duplicate scans may find review candidates but do not
+authorize project cleanup.
 
 ## 1. Audit only
 
