@@ -18,7 +18,13 @@ Tier 1 removed 11,792 cache files. Target-level accounting showed 856,268,800 al
 
 No repository, environment, database, cloud-managed folder, managed media library, personal recording, research state, backup, or higher-tier candidate was changed.
 
-This documentation expansion performs no new audit or cleanup.
+On 2026-09-01, a separate authorized Rule 0 workspace-maintenance run removed
+80 exact duplicate generated reports—40 ZIP and 40 HTML files—after current
+content, link, owner, repository, and retained-copy checks. Target accounting
+showed 46,993,408 allocated bytes released. All 83 remaining ZIP files were
+preserved after project-level review. No tracked file, repository history,
+private record, submission artifact, or executable cross-course dependency was
+removed. See the [sanitized run record](audit/2026-09-01-rule0-workspace-maintenance.md).
 
 ## Connected scopes
 
@@ -27,7 +33,7 @@ This documentation expansion performs no new audit or cleanup.
 | Mac | Audit v1 complete; corrected audit v2 complete; Tier 1 complete; Tier 2 pending | [`scopes/mac/`](scopes/mac/README.md) |
 | iPhone | Not started | [`scopes/iphone/`](scopes/iphone/README.md) |
 | Google Drive | Not started | [`scopes/google-drive/`](scopes/google-drive/README.md) |
-| GitHub repositories and local clones | Not started | [`scopes/github/`](scopes/github/README.md) |
+| GitHub repositories and local clones | Limited course-root preflight complete; reconciliation pending | [`scopes/github/`](scopes/github/README.md) |
 
 Each scope requires its own audit, approval, execution, and verification phase. Evidence and approval do not transfer between systems.
 
@@ -45,10 +51,14 @@ Every action must pass a preservation test:
 - Has the user approved this exact risk tier?
 - Can the result be measured and audited afterward?
 
+The recursive workspace contract is documented in
+[`Rule 0 — Clean Up After Yourself`](docs/RULE_0.md).
+
 ## Repository map
 
 | Location | Purpose |
 |---|---|
+| [`docs/RULE_0.md`](docs/RULE_0.md) | Recursive cleanup, course-repository, and cross-course reference contract |
 | [`docs/SAFETY_MODEL.md`](docs/SAFETY_MODEL.md) | Five cleanup tiers and hard safety boundaries |
 | [`docs/WORKFLOW.md`](docs/WORKFLOW.md) | End-to-end audit, approval, execution, and verification flow |
 | [`docs/ROADMAP.md`](docs/ROADMAP.md) | Ordered cross-system program plan and approval gates |
@@ -63,6 +73,7 @@ Every action must pass a preservation test:
 | [`docs/PROVENANCE.md`](docs/PROVENANCE.md) | Relationship between private evidence and public summaries |
 | [`docs/AI_USE_LOG.md`](docs/AI_USE_LOG.md) | AI assistance, verification, and human responsibility |
 | [`audit/2026-08-02-tier1.md`](audit/2026-08-02-tier1.md) | Sanitized Tier 1 run record |
+| [`audit/2026-09-01-rule0-workspace-maintenance.md`](audit/2026-09-01-rule0-workspace-maintenance.md) | Sanitized archive, duplicate, and course-repository maintenance record |
 | [`data/public-metrics.csv`](data/public-metrics.csv) | Machine-readable, non-identifying project metrics |
 | [`templates/`](templates) | Candidate-review and run-report templates |
 | [`scripts/validate_repo.py`](scripts/validate_repo.py) | Public-safety and documentation validation |
@@ -93,7 +104,8 @@ Start with the [candidate-review template](templates/candidate-review.md). Keep 
 - Mac: Tier 1 complete and verified; Tier 2 pending
 - iPhone: not started
 - Google Drive: not started
-- GitHub and local clones: not started
+- GitHub and local clones: limited course-root preflight complete; dirty or
+  divergent roots require repository-specific reconciliation
 - Cross-system data-placement, backup/recovery, and retention policies: drafted in this change
 
 This project stops at each approval boundary. A future tier requires a new evidence review and explicit authorization.

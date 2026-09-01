@@ -26,6 +26,14 @@ An intentional snapshot that preserves context, structure, provenance, or prior 
 
 Automatically regenerable material with no user-authored content. It may qualify for Tier 1 only when its owner is inactive and all safety exclusions pass.
 
+### Project-managed transient output
+
+Run state, model checkpoints, logs, previews, results, or build output that the
+owning project explicitly identifies as staged, regenerable, or offloadable.
+This class remains protected while a run is active or until completion,
+retention, content, restore, and recovery evidence satisfy Rule 0. A generated
+name or ignored status does not establish this category.
+
 ### Verified redundant copy
 
 An independent physical copy whose complete retained counterpart has been verified by content and context. Quarantine before any later deletion.
