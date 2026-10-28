@@ -8,6 +8,12 @@ This repository is the project's public-safe **decision and accountability layer
 
 ## Current outcome
 
+The latest repeat sweep, on 2026-10-28, removed 8,864 old, regenerable compiler
+cache files and measured 123,478,016 allocated target bytes removed. Every
+corresponding source remained present; recent or source-less cache files and
+protected application/project data were retained. See the
+[repeat-sweep record](audit/2026-10-28-repeat-sweep.md).
+
 The project completed three controlled phases on 2026-08-02:
 
 1. A read-only storage and duplicate audit.

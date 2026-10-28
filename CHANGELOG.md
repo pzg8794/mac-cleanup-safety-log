@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Recorded the 2026-10-28 repeat sweep: 8,864 old compiler-cache files removed,
+  123,478,016 allocated target bytes removed, and retained sources verified.
 - Added recursive Rule 0 controls for current-task hygiene, project-directory
   context, course repository boundaries, and commit-pinned cross-course reuse.
 - Added the directory-contract and run-lifecycle evidence gate to the workflow,

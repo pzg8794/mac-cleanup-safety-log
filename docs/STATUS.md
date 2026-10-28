@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-09-01
+Last updated: 2026-10-28
 
 ## System status
 
@@ -24,6 +24,7 @@ Last updated: 2026-09-01
 | Tier 4 | Manual review | Project, research, course, application, and personal duplicates remain preserved |
 | Tier 5 | Protected | Unique, uncertain, managed, and workflow-critical material remains untouched |
 | Rule 0 workspace maintenance | Complete | Eighty exact duplicate generated reports removed; 83 reviewed ZIPs retained |
+| October repeat sweep | Complete within existing boundaries | 8,864 old bytecode-cache files removed; 123,478,016 allocated target bytes; retained sources verified |
 
 ## Verified Tier 1 result
 
@@ -38,6 +39,9 @@ Last updated: 2026-09-01
 
 ## Current gates
 
+- The October sweep is complete within its verified cache scope. Broader
+  browser-cache review remains pending a separate scope decision; existing
+  browser and recent-cache exclusions were preserved.
 - Mac is stopped at the Tier 2 approval boundary.
 - iPhone and Google Drive scopes are stopped before audit authorization.
 - GitHub/local-clone work is limited to the completed course-root preflight.
