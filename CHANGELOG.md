@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Recorded the explicitly approved 2026-11-07 browser-cache cleanup: 776,509
+  entries removed, 17,025,130,496 allocated target bytes, and independent
+  preservation checks for 131 backend directories and 1,208 metadata items.
 - Recorded the 2026-10-28 repeat sweep: 8,864 old compiler-cache files removed,
   123,478,016 allocated target bytes removed, and retained sources verified.
 - Added recursive Rule 0 controls for current-task hygiene, project-directory

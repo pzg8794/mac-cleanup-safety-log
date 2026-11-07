@@ -39,3 +39,13 @@ date,phase,metric,value,unit,notes
 2026-10-28,repeat-sweep,unmapped_or_sourceless_cache_files_preserved,34329,files,Regeneration source not independently established
 2026-10-28,repeat-sweep,observed_volume_free_increase,126767104,bytes,Includes background filesystem activity and is not wholly attributed
 2026-10-28,repeat-sweep,cleanup_errors,0,errors,Exact target removal and retained source verification completed
+2026-11-07,approved-browser-cache,files_removed,776509,files,Exact format-verified ordinary resource and code cache entries
+2026-11-07,approved-browser-cache,logical_bytes_removed,15801788024,bytes,Target file lengths
+2026-11-07,approved-browser-cache,target_allocated_bytes_removed,17025130496,bytes,Separate from observed volume movement
+2026-11-07,approved-browser-cache,available_bytes_before,9806942208,bytes,Immediately before unlinking began
+2026-11-07,approved-browser-cache,available_bytes_after,27400896512,bytes,Immediately after completed action
+2026-11-07,approved-browser-cache,observed_volume_free_increase,17593954304,bytes,Includes filesystem metadata and background activity
+2026-11-07,approved-browser-cache,cache_backend_directories_preserved,131,directories,Original device and inode identities verified
+2026-11-07,approved-browser-cache,retained_metadata_items_verified,1208,items,No missing or changed recorded metadata
+2026-11-07,approved-browser-cache,remaining_selected_entries,0,files,Independent post-action check
+2026-11-07,approved-browser-cache,cleanup_errors,0,errors,Completed action with no unresolved partial execution

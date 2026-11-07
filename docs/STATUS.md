@@ -1,12 +1,12 @@
 # Status
 
-Last updated: 2026-10-28
+Last updated: 2026-11-07
 
 ## System status
 
 | System or control | State | Public-safe detail |
 |---|---|---|
-| [Mac](../scopes/mac/README.md) | Prior audits and Tier 1 complete; Rule 0 workspace maintenance complete; Tier 2 pending | One separately authorized exact-duplicate set was removed; no Tier 2 action is authorized |
+| [Mac](../scopes/mac/README.md) | Prior audits, Tier 1, workspace maintenance and approved browser-cache action complete; Tier 2 pending | Exact browser cache entries were separately authorized and removed; broader browser storage and Tier 2 remain protected |
 | [iPhone](../scopes/iphone/README.md) | Not started | No audit, export, backup inspection, or cleanup has begun |
 | [Google Drive](../scopes/google-drive/README.md) | Not started | No listing, inventory, move, or cleanup has begun |
 | [GitHub and local clones](../scopes/github/README.md) | Limited course-root preflight complete | Twenty-five roots checked; dirty or divergent roots remain stopped before synchronization |
@@ -25,6 +25,7 @@ Last updated: 2026-10-28
 | Tier 5 | Protected | Unique, uncertain, managed, and workflow-critical material remains untouched |
 | Rule 0 workspace maintenance | Complete | Eighty exact duplicate generated reports removed; 83 reviewed ZIPs retained |
 | October repeat sweep | Complete within existing boundaries | 8,864 old bytecode-cache files removed; 123,478,016 allocated target bytes; retained sources verified |
+| November approved cache action | Complete and independently verified | 776,509 resource/code cache entries removed; 17,025,130,496 allocated target bytes; 1,208 retained metadata items unchanged |
 
 ## Verified Tier 1 result
 
@@ -39,9 +40,10 @@ Last updated: 2026-10-28
 
 ## Current gates
 
-- The October sweep is complete within its verified cache scope. Broader
-  browser-cache review remains pending a separate scope decision; existing
-  browser and recent-cache exclusions were preserved.
+- The separately approved November offline browser-cache action is complete.
+  It authorized only the reviewed entry files, including recent cache. All
+  other browser data categories remain excluded; no standing purge permission
+  or broader browser action follows from that approval.
 - Mac is stopped at the Tier 2 approval boundary.
 - iPhone and Google Drive scopes are stopped before audit authorization.
 - GitHub/local-clone work is limited to the completed course-root preflight.
