@@ -10,12 +10,15 @@ Track the preservation-first audit, approval, execution, and verification of sto
 - Corrected audit v2: complete and read-only
 - Tier 1: complete and verified
 - Rule 0 workspace maintenance: complete and verified
+- Specifically approved browser-cache cleanup: complete and independently verified
 - Tier 2: privately proposed and awaiting explicit approval
 - Higher-risk tiers: preserved or awaiting domain-specific review
 
 The completed Tier 1 public record remains in [`audit/2026-08-02-tier1.md`](../../audit/2026-08-02-tier1.md).
 The separately authorized workspace-maintenance record is in
 [`audit/2026-09-01-rule0-workspace-maintenance.md`](../../audit/2026-09-01-rule0-workspace-maintenance.md).
+The specifically approved browser-cache record is in
+[`audit/2026-11-07-browser-cache-cleanup.md`](../../audit/2026-11-07-browser-cache-cleanup.md).
 
 ## Major risks
 
